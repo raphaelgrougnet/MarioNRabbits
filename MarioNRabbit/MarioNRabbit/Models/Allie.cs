@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MarioNRabbit.Models
 {
-    class Allie : Personnage
+    public class Allie : Personnage
     {
     }
 }

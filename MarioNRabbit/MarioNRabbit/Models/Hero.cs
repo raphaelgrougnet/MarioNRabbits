@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MarioNRabbit.Models
 {
-    class Hero : Personnage, IAttaquer
+    public class Hero : Personnage, IAttaquer
     {
 
         #region CONSTANTES
