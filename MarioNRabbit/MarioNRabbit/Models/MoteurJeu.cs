@@ -49,21 +49,27 @@ namespace MarioNRabbit.Models
             // Voici un exemple d'ajout à une liste d'une instance de classe créée dynamiquement:
             // ListePersonnages.Add(Activator.CreateInstance(DefinirClasseHeros("Nom du héros"), Paramètres du Constructeur) as Personnage);
 
+            
+
             foreach (string nom in pNomHerosSelectionnes)
             {
                 Utils.CoordonneesGrille coos = GenererPositionHasardPersonnage(ListePersonnages, TypePersonnage.HEROS);
-                ListePersonnages.Add(Activator.CreateInstance(DefinirClasseHeros(nom),coos.X, coos.Y, 5, 10) as Personnage);
+                ListePersonnages.Add(Activator.CreateInstance(DefinirClasseHeros(nom),nom, coos.X, coos.Y, 5, 10, new ArmeAttaquer("Demolisseur", 3, 5)) as Personnage);
                 
 
             }
 
-            for (int i = 0; i < NB_ENNEMIS; i++)
-            {
-                Utils.CoordonneesGrille coos = GenererPositionHasardPersonnage(ListePersonnages, TypePersonnage.ENNEMI);
-                ListePersonnages.Add(Activator.CreateInstance(DefinirClasseHeros("Ziggy"), coos.X, coos.Y, 5, 10) as Personnage);
-                ListePersonnages.Add(Activator.CreateInstance(DefinirClasseHeros("Smasher"), coos.X, coos.Y, 5, 10) as Personnage);
-                ListePersonnages.Add(Activator.CreateInstance(DefinirClasseHeros("Kong"), coos.X, coos.Y, 5, 10) as Personnage);
-            }
+            Utils.CoordonneesGrille coos2 = GenererPositionHasardPersonnage(ListePersonnages, TypePersonnage.ENNEMI);
+            Ziggy ziggy = new Ziggy("Ziggy", coos2.X, coos2.Y, 5, 10, new ArmeAttaquer("Demolisseur", 3, 5));
+            ListePersonnages.Add(ziggy);
+            coos2 = GenererPositionHasardPersonnage(ListePersonnages, TypePersonnage.ENNEMI);
+            Smasher smasher = new Smasher("Smasher", coos2.X, coos2.Y, 5, 10, new ArmeAttaquer("Demolisseur", 3, 5));
+            ListePersonnages.Add(smasher);
+            coos2 = GenererPositionHasardPersonnage(ListePersonnages, TypePersonnage.ENNEMI);
+            Kong kong = new Kong("Kong", coos2.X, coos2.Y, 5, 10, new ArmeAttaquer("Demolisseur", 3, 5));
+            ListePersonnages.Add(kong);
+
+            
 
 
             ActionCourante = TypeAction.AUCUNE;
@@ -72,12 +78,14 @@ namespace MarioNRabbit.Models
 
         private Type DefinirClasseHeros(string pHeros)
         {
-            List<string> familleMario = new List<string> { "Mario", "Luigi", "Yoshi", "Peach" };
 
-            if (familleMario.Contains(pHeros))
-                return Type.GetType($"MarioNRabbit.Models.{pHeros}, MarioNRabbit");
-            else
-                return Type.GetType("MarioNRabbit.Models.FamilleLapin, MarioNRabbit");
+            return Type.GetType($"MarioNRabbit.Models.{pHeros}, MarioNRabbit");
+            //List<string> familleMario = new List<string> { "Mario", "Luigi", "Yoshi", "Peach" };
+
+            //if (familleMario.Contains(pHeros))
+            //    return Type.GetType($"MarioNRabbit.Models.{pHeros}, MarioNRabbit");
+            //else
+            //    return Type.GetType("MarioNRabbit.Models.FamilleLapin, MarioNRabbit");
         }
 
         private Utils.CoordonneesGrille GenererPositionHasardPersonnage(List<Personnage> pListePersonnages, TypePersonnage pTypePersonnage)
@@ -120,8 +128,15 @@ namespace MarioNRabbit.Models
             // Cette méthode doit retourner:
             // - true, si la coordonnée reçue en paramètre est en collision avec la position d'un personnage
             // - false, si aucune collision n'est détectée
+            foreach (Personnage perso in pListePersonnages)
+            {
+                if (perso.PositionX == pCoordonnees.X && perso.PositionY == pCoordonnees.Y)
+                {
+                    return true;
+                }
+            }
 
-            return true;
+            return false;
         }
 
         public bool EstAttaquePossible()
