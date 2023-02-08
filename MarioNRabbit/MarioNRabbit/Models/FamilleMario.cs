@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MarioNRabbit.Models
 {
-    public class FamilleMario : Personnage
+    public abstract class FamilleMario : Heros
     {
 
         #region CONSTANTES

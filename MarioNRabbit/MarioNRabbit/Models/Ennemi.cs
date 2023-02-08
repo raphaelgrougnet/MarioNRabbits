@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MarioNRabbit.Models
 {
-    public class Ennemi : Personnage, IAttaquer
+    public class Ennemi : Attaquant
     {
 
         #region CONSTANTES
@@ -14,22 +14,17 @@ namespace MarioNRabbit.Models
         #endregion
 
         #region ATTRIBUTS
-        private ArmeAttaquer _armeAttaque { get; set; }
 
         #endregion
 
         #region PROPRIÉTÉS
-        public ArmeAttaquer ArmeAttaque
-        {
-            get { return _armeAttaque; }
-            set { _armeAttaque = value; }
-        }
+
         #endregion
 
         #region CONSTRUCTEURS
-        public Ennemi(string pNom, int pPositionX, int pPositionY, int pNbCasesDeplacementMax, int pNbPointsVie, ArmeAttaquer pArme) : base(pNom, pPositionX, pPositionY, pNbCasesDeplacementMax, pNbPointsVie)
+        public Ennemi(string pNom, int pPositionX, int pPositionY, int pNbCasesDeplacementMax, int pNbPointsVie) : base(pNom, pPositionX, pPositionY, pNbCasesDeplacementMax, pNbPointsVie)
         {
-            ArmeAttaque = pArme;
+            
         }
         
         #endregion

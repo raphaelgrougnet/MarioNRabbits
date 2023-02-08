@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MarioNRabbit.Models
 {
-    public class Heros : Personnage, IAttaquer
+    public abstract class Heros : Attaquant
     {
 
         #region CONSTANTES
@@ -22,16 +22,14 @@ namespace MarioNRabbit.Models
         #endregion
 
         #region CONSTRUCTEURS
-
+        public Heros(string pNom, int pPositionX, int pPositionY, int pNbCasesDeplacementMax, int pNbPointsVie) : base(pNom, pPositionX, pPositionY, pNbCasesDeplacementMax, pNbPointsVie)
+        {
+        }
         #endregion
 
         #region MÉTHODES
 
         #endregion
-        public Heros(string pNom, int pPositionX, int pPositionY, int pNbCasesDeplacementMax, int pNbPointsVie) : base(pNom, pPositionX, pPositionY, pNbCasesDeplacementMax, pNbPointsVie)
-        {
-        }
 
-        public ArmeAttaquer ArmeAttaque { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }
