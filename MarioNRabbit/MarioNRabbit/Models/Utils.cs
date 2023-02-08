@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.IO;
 
 namespace BattleKingdom.Models
 {
@@ -39,5 +41,16 @@ namespace BattleKingdom.Models
         {
             return Math.Abs(pSource.X - pDestination.X) + Math.Abs(pSource.Y - pDestination.Y);
         }
+
+        public static void InitialiserFichierTrace()
+        {
+            Stream leFichier = File.Create("FichierTrace.txt");
+            TextWriterTraceListener leListener = new TextWriterTraceListener(leFichier);
+            Trace.AutoFlush = true;
+            Trace.Listeners.Add(leListener);
+
+        }
+
+        
     }
 }
