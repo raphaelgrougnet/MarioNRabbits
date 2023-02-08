@@ -62,6 +62,15 @@
 
         #region CONSTRUCTEURS
 
+        public Personnage(string pNom, int pPositionX, int pPositionY, int pNbCasesDeplacementMax, int pNbPointsVie)
+        {
+            Nom = pNom;
+            PositionX = pPositionX;
+            PositionY = pPositionY;
+            NbCasesDeplacementMax = pNbCasesDeplacementMax;
+            NbPointsVie = pNbPointsVie;
+        }
+
         #endregion
 
         #region MÉTHODES
