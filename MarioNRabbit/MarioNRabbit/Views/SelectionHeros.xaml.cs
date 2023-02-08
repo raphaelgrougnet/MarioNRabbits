@@ -17,7 +17,7 @@ namespace BattleKingdom
             InitializeComponent();
 
             // On peut mettre cette ligne en commentaire... ;)
-            trameSonore.Play();
+            //trameSonore.Play();
         }
 
         private void Ajout(object pSender, RoutedEventArgs pEvent)
