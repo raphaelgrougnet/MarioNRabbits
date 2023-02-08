@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Windows.Controls;
 
 namespace BattleKingdom.Models
 {
@@ -51,6 +52,13 @@ namespace BattleKingdom.Models
 
         }
 
-        
+        public static void Tracer(string pMsg, TextBox pControle)
+        {
+            Trace.WriteLine($"> {pMsg}");
+            pControle.Text += "> " + pMsg + "\n";
+            pControle.ScrollToEnd();
+        }
+
+
     }
 }
