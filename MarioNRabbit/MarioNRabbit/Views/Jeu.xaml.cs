@@ -1,4 +1,4 @@
-﻿using BattleKingdom.Models;
+﻿using MarioNRabbit.Models;
 using System;
 using System.Collections.Generic;
 using System.Windows;
@@ -6,7 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 
-namespace BattleKingdom.Views
+namespace MarioNRabbit.Views
 {
     public partial class Jeu : Window
     {

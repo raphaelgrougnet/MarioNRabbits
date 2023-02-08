@@ -1,4 +1,6 @@
-﻿namespace BattleKingdom.Models
+﻿using System;
+
+namespace MarioNRabbit.Models
 {
     public abstract class Personnage
     {
@@ -74,7 +76,10 @@
         #endregion
 
         #region MÉTHODES
-
+        public void SeDeplacer(int pPositionX, int pPositionY)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
 
 

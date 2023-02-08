@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows.Controls;
 
-namespace BattleKingdom.Models
+namespace MarioNRabbit.Models
 {
     public static class Utils
     {

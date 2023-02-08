@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace BattleKingdom.Views
+namespace MarioNRabbit.Views
 {
     public partial class Init : Window
     {

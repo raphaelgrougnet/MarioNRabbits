@@ -1,8 +1,9 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
-using static BattleKingdom.Models.Personnage;
+using static MarioNRabbit.Models.Personnage;
 
-namespace BattleKingdom.Models
+namespace MarioNRabbit.Models
 {
     public class MoteurJeu
     {

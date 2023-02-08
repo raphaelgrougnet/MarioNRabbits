@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace BattleKingdom
+namespace MarioNRabbit
 {
 
     public partial class SelectionHeros : Window
