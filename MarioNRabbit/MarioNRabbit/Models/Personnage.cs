@@ -1,18 +1,73 @@
 ﻿namespace BattleKingdom.Models
 {
-    public class Personnage
+    public abstract class Personnage
     {
         // TODO Classe Personnage
         //
         // Ajouter ici tout ce qui est nécessaire à la classe Personnage.
         // Les modificateurs d'accès peuvent être modifiés.
         // L'enum TypePersonnage sera nécessaire lors de l'exécution du programme; il faut donc bien le gérer dans la classe Personnage.
+
+        #region CONSTANTES et ENUMS
         public enum TypePersonnage
         {
             HEROS,
             ENNEMI,
             ALLIE
         }
+
+        #endregion
+
+        #region ATTRIBUTS
+        
+        private string _nom;
+
+        private int _positionX;
+
+        private int _positionY;
+
+        private int _nbCasesDeplacementMax;
+
+        private int _nbPointsVie;
+
+        #endregion
+
+        #region PROPRIÉTÉS
+        public string Nom
+        {
+            get { return _nom; }
+            set { _nom = value; }
+        }
+        public int PositionX
+        {
+            get { return _positionX; }
+            set { _positionX = value; }
+        }
+        public int PositionY
+        {
+            get { return _positionY; }
+            set { _positionY = value; }
+        }
+        public int NbCasesDeplacementMax
+        {
+            get { return _nbCasesDeplacementMax; }
+            set { _nbCasesDeplacementMax = value; }
+        }
+        public int NbPointsVie
+        {
+            get { return _nbPointsVie; }
+            set { _nbPointsVie = value; }
+        }
+        #endregion
+
+        #region CONSTRUCTEURS
+
+        #endregion
+
+        #region MÉTHODES
+
+        #endregion
+
 
         // TODO Tests unitaires pour la classe Personnage
         //
