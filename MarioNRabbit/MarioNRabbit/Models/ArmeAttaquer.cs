@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MarioNRabbit.Models
 {
-    public abstract class ArmeAttaquer
+    public class ArmeAttaquer
     {
 
         #region CONSTANTES
@@ -44,7 +44,7 @@ namespace MarioNRabbit.Models
         #endregion
 
         #region CONSTRUCTEURS
-        protected ArmeAttaquer(string nom, int nbPointsDegat, int nbCasesDistanceMax)
+        public ArmeAttaquer(string nom, int nbPointsDegat, int nbCasesDistanceMax)
         {
             Nom = nom;
             NbPointsDegat = nbPointsDegat;
