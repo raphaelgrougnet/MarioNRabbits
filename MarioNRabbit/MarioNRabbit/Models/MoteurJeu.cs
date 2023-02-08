@@ -49,6 +49,23 @@ namespace MarioNRabbit.Models
             // Voici un exemple d'ajout à une liste d'une instance de classe créée dynamiquement:
             // ListePersonnages.Add(Activator.CreateInstance(DefinirClasseHeros("Nom du héros"), Paramètres du Constructeur) as Personnage);
 
+            foreach (string nom in pNomHerosSelectionnes)
+            {
+                Utils.CoordonneesGrille coos = GenererPositionHasardPersonnage(ListePersonnages, TypePersonnage.HEROS);
+                ListePersonnages.Add(Activator.CreateInstance(DefinirClasseHeros(nom),coos.X, coos.Y, 5, 10) as Personnage);
+                
+
+            }
+
+            for (int i = 0; i < NB_ENNEMIS; i++)
+            {
+                Utils.CoordonneesGrille coos = GenererPositionHasardPersonnage(ListePersonnages, TypePersonnage.ENNEMI);
+                ListePersonnages.Add(Activator.CreateInstance(DefinirClasseHeros("Ziggy"), coos.X, coos.Y, 5, 10) as Personnage);
+                ListePersonnages.Add(Activator.CreateInstance(DefinirClasseHeros("Smasher"), coos.X, coos.Y, 5, 10) as Personnage);
+                ListePersonnages.Add(Activator.CreateInstance(DefinirClasseHeros("Kong"), coos.X, coos.Y, 5, 10) as Personnage);
+            }
+
+
             ActionCourante = TypeAction.AUCUNE;
             NbActionRestante = 3;
         }
@@ -58,9 +75,9 @@ namespace MarioNRabbit.Models
             List<string> familleMario = new List<string> { "Mario", "Luigi", "Yoshi", "Peach" };
 
             if (familleMario.Contains(pHeros))
-                return Type.GetType($"BattleKingdom.Models.{pHeros}, BattleKingdom");
+                return Type.GetType($"MarioNRabbit.Models.{pHeros}, MarioNRabbit");
             else
-                return Type.GetType("BattleKingdom.Models.FamilleLapin, BattleKingdom");
+                return Type.GetType("MarioNRabbit.Models.FamilleLapin, MarioNRabbit");
         }
 
         private Utils.CoordonneesGrille GenererPositionHasardPersonnage(List<Personnage> pListePersonnages, TypePersonnage pTypePersonnage)
