@@ -8,9 +8,19 @@ namespace MarioNRabbit.Models
 {
     public abstract class Attaquant : Personnage
     {
-        public Attaquant(string pNom, int pPositionX, int pPositionY, int pNbCasesDeplacementMax, int pNbPointsVie) : base(pNom, pPositionX, pPositionY, pNbCasesDeplacementMax, pNbPointsVie)
+        public Attaquant(string pNom, int pPositionX, int pPositionY, int pNbCasesDeplacementMax, int pNbPointsVie, ArmeAttaquer pArme) : base(pNom, pPositionX, pPositionY, pNbCasesDeplacementMax, pNbPointsVie)
         {
+            Arme = pArme;
         }
+
+        private ArmeAttaquer _arme;
+
+        public ArmeAttaquer Arme
+        {
+            get { return _arme; }
+            set { _arme = value; }
+        }
+
 
         public bool Attaquer(Personnage pPersoAttaquant, Personnage pPersoCible)
         {
