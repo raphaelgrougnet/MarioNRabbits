@@ -8,8 +8,6 @@ namespace MarioNRabbit.Models
 {
     public class LapinYoshi : FamilleLapin
     {
-        public LapinYoshi(string pNom, int pPositionX, int pPositionY, int pNbCasesDeplacementMax, int pNbPointsVie) : base(pNom, pPositionX, pPositionY, pNbCasesDeplacementMax, pNbPointsVie)
-        {
-        }
+        public LapinYoshi(string pNom, int pPositionX, int pPositionY, int pNbCasesDeplacementMax, int pNbPointsVie, ArmeAttaquer pArme) : base(pNom, pPositionX, pPositionY, pNbCasesDeplacementMax, pNbPointsVie, pArme) { Arme = pArme; }
     }
 }

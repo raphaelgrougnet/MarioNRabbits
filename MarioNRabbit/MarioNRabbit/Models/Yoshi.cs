@@ -8,8 +8,9 @@ namespace MarioNRabbit.Models
 {
     public class Yoshi : FamilleMario
     {
-        public Yoshi(string pNom, int pPositionX, int pPositionY, int pNbCasesDeplacementMax, int pNbPointsVie) : base(pNom, pPositionX, pPositionY, pNbCasesDeplacementMax, pNbPointsVie)
+        public Yoshi(string pNom, int pPositionX, int pPositionY, int pNbCasesDeplacementMax, int pNbPointsVie, ArmeAttaquer pArme) : base(pNom, pPositionX, pPositionY, pNbCasesDeplacementMax, pNbPointsVie, pArme)
         {
+            Arme = pArme;
         }
     }
 }

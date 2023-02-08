@@ -14,7 +14,8 @@ namespace MarioNRabbit.Models
         #endregion
 
         #region ATTRIBUTS
-
+        
+        
         #endregion
 
         #region PROPRIÉTÉS
@@ -22,8 +23,9 @@ namespace MarioNRabbit.Models
         #endregion
 
         #region CONSTRUCTEURS
-        public Heros(string pNom, int pPositionX, int pPositionY, int pNbCasesDeplacementMax, int pNbPointsVie) : base(pNom, pPositionX, pPositionY, pNbCasesDeplacementMax, pNbPointsVie)
+        public Heros(string pNom, int pPositionX, int pPositionY, int pNbCasesDeplacementMax, int pNbPointsVie, ArmeAttaquer pArme) : base(pNom, pPositionX, pPositionY, pNbCasesDeplacementMax, pNbPointsVie, pArme)
         {
+            Arme = pArme;
         }
         #endregion
 

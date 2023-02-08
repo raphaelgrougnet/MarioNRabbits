@@ -22,10 +22,7 @@ namespace MarioNRabbit.Models
         #endregion
 
         #region CONSTRUCTEURS
-        public FamilleMario(string pNom, int pPositionX, int pPositionY, int pNbCasesDeplacementMax, int pNbPointsVie) : base(pNom, pPositionX, pPositionY, pNbCasesDeplacementMax, pNbPointsVie)
-        {
-            
-        }
+        public FamilleMario(string pNom, int pPositionX, int pPositionY, int pNbCasesDeplacementMax, int pNbPointsVie, ArmeAttaquer pArme) : base(pNom, pPositionX, pPositionY, pNbCasesDeplacementMax, pNbPointsVie, pArme) { Arme = pArme; }
         #endregion
 
         #region MÉTHODES

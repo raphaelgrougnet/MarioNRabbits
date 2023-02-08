@@ -8,8 +8,9 @@ namespace MarioNRabbit.Models
 {
     public class Peach : FamilleMario
     {
-        public Peach(string pNom, int pPositionX, int pPositionY, int pNbCasesDeplacementMax, int pNbPointsVie) : base(pNom, pPositionX, pPositionY, pNbCasesDeplacementMax, pNbPointsVie)
+        public Peach(string pNom, int pPositionX, int pPositionY, int pNbCasesDeplacementMax, int pNbPointsVie, ArmeAttaquer pArme) : base(pNom, pPositionX, pPositionY, pNbCasesDeplacementMax, pNbPointsVie, pArme)
         {
+            Arme = pArme;
         }
     }
 }
