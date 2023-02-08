@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace MarioNRabbit.Models
 {
-    interface IAttaquer
+    public interface IAttaquer
     {
+        public ArmeAttaquer ArmeAttaque { get; set; }
+        
+        
     }
 }
