@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="BattleKingdom.Models.Personnage">
-    <Position X="7.75" Y="1.25" Width="1.5" />
+  <Class Name="BattleKingdom.Models.Personnage" Collapsed="true">
+    <Position X="6.5" Y="0.75" Width="1.5" />
     <NestedTypes>
       <Enum Name="BattleKingdom.Models.Personnage.TypePersonnage" Collapsed="true">
         <TypeIdentifier>
@@ -15,7 +15,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="BattleKingdom.Models.Utils">
-    <Position X="5.25" Y="1.25" Width="1.5" />
+    <Position X="2.75" Y="1.5" Width="1.5" />
     <NestedTypes>
       <Class Name="BattleKingdom.Models.Utils.CoordonneesGrille" Collapsed="true">
         <TypeIdentifier>
@@ -24,9 +24,32 @@
       </Class>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAAAQBAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Utils.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="MarioNRabbit.Models.Allie" Collapsed="true">
+    <Position X="4.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Allie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarioNRabbit.Models.Ennemi" Collapsed="true">
+    <Position X="6.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Ennemi.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MarioNRabbit.Models.Hero" Collapsed="true">
+    <Position X="8.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Hero.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
