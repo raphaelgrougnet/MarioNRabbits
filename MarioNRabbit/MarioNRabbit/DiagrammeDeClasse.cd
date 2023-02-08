@@ -2,13 +2,6 @@
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="BattleKingdom.Models.Personnage" Collapsed="true">
     <Position X="6.5" Y="0.75" Width="1.5" />
-    <NestedTypes>
-      <Enum Name="BattleKingdom.Models.Personnage.TypePersonnage" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>Models\Personnage.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Enum>
-    </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAEgCIAAAAAABCAAgAAAAAMAAAAAAAA=</HashCode>
       <FileName>Models\Personnage.cs</FileName>
@@ -38,7 +31,7 @@
   <Class Name="MarioNRabbit.Models.Ennemi" Collapsed="true">
     <Position X="6.5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAQAAAAAAA=</HashCode>
       <FileName>Models\Ennemi.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -51,5 +44,12 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
+  <Interface Name="MarioNRabbit.Models.IAttaquer" Collapsed="true">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\IAttaquer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
