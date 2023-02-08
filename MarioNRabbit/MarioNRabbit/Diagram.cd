@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="MarioNRabbit.Models.Allie" Collapsed="true">
-    <Position X="5" Y="1.75" Width="1.5" />
+    <Position X="4.25" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Allie.cs</FileName>
@@ -15,9 +15,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="MarioNRabbit.Models.Attaquant" Collapsed="true">
-    <Position X="9.5" Y="0.5" Width="1.5" />
+    <Position X="6.5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAQAAQAAAAAAA=</HashCode>
       <FileName>Models\Attaquant.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -29,21 +29,21 @@
     </TypeIdentifier>
   </Class>
   <Class Name="MarioNRabbit.Models.Ennemi" Collapsed="true">
-    <Position X="7.5" Y="1.75" Width="1.5" />
+    <Position X="3.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Ennemi.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MarioNRabbit.Models.FamilleMario" Collapsed="true">
-    <Position X="9.75" Y="2.5" Width="1.5" />
+    <Position X="7.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAACAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\FamilleMario.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MarioNRabbit.Models.Heros" Collapsed="true">
-    <Position X="11.5" Y="1.75" Width="1.5" />
+    <Position X="9.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Heros.cs</FileName>
@@ -57,7 +57,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="MarioNRabbit.Models.Personnage" Collapsed="true">
-    <Position X="6.25" Y="0.5" Width="1.5" />
+    <Position X="5.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAAAEgCIAAAAAABCAAgAAAAAMAAAAAAAA=</HashCode>
       <FileName>Models\Personnage.cs</FileName>
@@ -71,66 +71,87 @@
     </TypeIdentifier>
   </Class>
   <Class Name="MarioNRabbit.Models.FamilleLapin" Collapsed="true">
-    <Position X="13.25" Y="2.5" Width="1.5" />
+    <Position X="11.25" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\FamilleLapin.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MarioNRabbit.Models.LapinLuigi" Collapsed="true">
-    <Position X="12.25" Y="4.75" Width="1.5" />
+    <Position X="10.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\LapinLuigi.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MarioNRabbit.Models.LapinMario" Collapsed="true">
-    <Position X="12.25" Y="3.75" Width="1.5" />
+    <Position X="10.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\LapinMario.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MarioNRabbit.Models.LapinPeach" Collapsed="true">
-    <Position X="14" Y="3.75" Width="1.5" />
+    <Position X="12" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\LapinPeach.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MarioNRabbit.Models.LapinYoshi" Collapsed="true">
-    <Position X="14" Y="4.75" Width="1.5" />
+    <Position X="12" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\LapinYoshi.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MarioNRabbit.Models.Luigi" Collapsed="true">
-    <Position X="10.5" Y="3.75" Width="1.5" />
+    <Position X="8.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Luigi.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MarioNRabbit.Models.Mario" Collapsed="true">
-    <Position X="8.75" Y="3.75" Width="1.5" />
+    <Position X="6.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Mario.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MarioNRabbit.Models.Peach" Collapsed="true">
-    <Position X="10.5" Y="4.75" Width="1.5" />
+    <Position X="8.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Peach.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MarioNRabbit.Models.Yoshi" Collapsed="true">
-    <Position X="8.75" Y="4.75" Width="1.5" />
+    <Position X="6.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Yoshi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarioNRabbit.Models.Ziggy" Collapsed="true">
+    <Position X="2.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Ziggy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarioNRabbit.Models.Smasher" Collapsed="true">
+    <Position X="4.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Smasher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarioNRabbit.Models.Kong" Collapsed="true">
+    <Position X="3.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Kong.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
