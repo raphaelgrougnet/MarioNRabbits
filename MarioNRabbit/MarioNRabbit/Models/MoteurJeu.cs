@@ -79,16 +79,16 @@ namespace MarioNRabbit.Models
         private Type DefinirClasseHeros(string pHeros)
         {
 
-            return Type.GetType($"MarioNRabbit.Models.{pHeros}, MarioNRabbit");
-            //List<string> familleMario = new List<string> { "Mario", "Luigi", "Yoshi", "Peach" };
+            
+            List<string> familleMario = new List<string> { "Mario", "Luigi", "Yoshi", "Peach" };
 
-            //if (familleMario.Contains(pHeros))
-            //    return Type.GetType($"MarioNRabbit.Models.{pHeros}, MarioNRabbit");
-            //else
-            //    return Type.GetType("MarioNRabbit.Models.FamilleLapin, MarioNRabbit");
+            if (familleMario.Contains(pHeros))
+                return Type.GetType($"MarioNRabbit.Models.{pHeros}, MarioNRabbit");
+            else
+                return Type.GetType("MarioNRabbit.Models.FamilleLapin, MarioNRabbit");
         }
 
-        private Utils.CoordonneesGrille GenererPositionHasardPersonnage(List<Personnage> pListePersonnages, TypePersonnage pTypePersonnage)
+            private Utils.CoordonneesGrille GenererPositionHasardPersonnage(List<Personnage> pListePersonnages, TypePersonnage pTypePersonnage)
         {
             int X;
             int Y;
