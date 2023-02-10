@@ -11,7 +11,7 @@ namespace MarioNRabbit.Models
         
         public Mario(string pNom, int pPositionX, int pPositionY, int pNbCasesDeplacementMax, int pNbPointsVie, ArmeAttaquer pArme) : base(pNom, pPositionX, pPositionY, pNbCasesDeplacementMax, pNbPointsVie, pArme) 
         {
-            Arme = pArme; 
+            Arme = pArme;
         }
 
         
