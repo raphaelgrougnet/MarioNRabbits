@@ -16,7 +16,7 @@ namespace MarioNRabbit
         // Le nombre de héros se gère par incrémentation et décrémentation.
         // Pour la liste de noms des héros, il faut utiliser la propriété Name retournée dans le contexte de BoutonSelectionHeros.
         List<Control> listeBoutons = new List<Control>();
-        public string Initiales;
+        private string _initialesJoueur;
 
         public SelectionHeros(string pInitiales)
         {
@@ -24,7 +24,7 @@ namespace MarioNRabbit
 
             // On peut mettre cette ligne en commentaire... ;)
             //trameSonore.Play();
-            string Initiales = pInitiales;
+            string InitialesJoueur = pInitiales;
 
         }
 
@@ -64,7 +64,7 @@ namespace MarioNRabbit
                 {
                     listeNoms.Add(bouton.Name);
                 }
-                Jeu jeu = new Jeu(Initiales, listeNoms);
+                Jeu jeu = new Jeu(_initialesJoueur, listeNoms);
                 jeu.Show();
                 Close();
 
