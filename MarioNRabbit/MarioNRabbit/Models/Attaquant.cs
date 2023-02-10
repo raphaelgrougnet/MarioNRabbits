@@ -20,12 +20,20 @@ namespace MarioNRabbit.Models
             get { return _arme; }
             set { _arme = value; }
         }
+        
 
-
-        public bool Attaquer(Personnage pPersoAttaquant, Personnage pPersoCible)
+        public bool Attaquer(Personnage pPersoCible, Personnage pPersoAttaquant)
         {
-            return true;
+            if (pPersoAttaquant is Attaquant)
+            {
+                Attaquant attaquant = pPersoAttaquant as Attaquant;
+                pPersoCible.NbPointsVie -= attaquant.Arme.NbPointsDegat;
+                return true;
+            }
+            return false;
+
         }
+        
             
     }
 }
