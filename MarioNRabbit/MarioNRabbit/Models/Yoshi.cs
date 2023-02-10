@@ -12,5 +12,20 @@ namespace MarioNRabbit.Models
         {
             Arme = pArme;
         }
+        private bool compActivee = false;
+        public override void ActiverCompetenceSpeciale()
+        {
+            NbCasesDeplacementMax += 2;
+        }
+
+        public override void DesactiverCompetenceSpeciale()
+        {
+            if (compActivee)
+            {
+                NbCasesDeplacementMax -= 2;
+                compActivee = false;
+            }
+            
+        }
     }
 }

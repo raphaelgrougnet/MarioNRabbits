@@ -14,6 +14,22 @@ namespace MarioNRabbit.Models
             Arme = pArme;
         }
 
-        
+
+        private bool compActivee = false;
+        public override void ActiverCompetenceSpeciale()
+        {
+            Arme.NbPointsDegat += 3;
+            compActivee = true;
+        }
+
+        public override void DesactiverCompetenceSpeciale()
+        {
+            if (compActivee)
+            {
+                Arme.NbPointsDegat -= 3;
+                compActivee = false;
+            }
+            
+        }
     }
 }
