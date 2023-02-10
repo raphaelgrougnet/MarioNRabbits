@@ -11,7 +11,7 @@ namespace MarioNRabbit.Views
     public partial class Jeu : Window
     {
         private MoteurJeu _moteurJeu;
-
+        private string _initialesJoueur;
         public Jeu(string pInitiales, List<string> pNomHerosSelectionnes)
         {
             InitializeComponent();
@@ -20,7 +20,7 @@ namespace MarioNRabbit.Views
             //
             // On doit initialiser ici la classe Moteur. Cette classe prend en paramètre la liste de noms des héros sélectionnés.
             _moteurJeu = new MoteurJeu(pNomHerosSelectionnes);
-
+            _initialesJoueur = pInitiales;
             CreationGrilleTerrain();
             CreationPanneau();
             CreationPersonnages();
@@ -149,6 +149,7 @@ namespace MarioNRabbit.Views
             string infos = "";
             Attaquant personnage = (Attaquant)_moteurJeu.ListePersonnages[pIndexPersonnage];
             infos += personnage.Nom + "\n";
+            infos += "Points de vie : " + personnage.NbPointsVie + "\n";
             infos += "Déplacement : " + personnage.NbCasesDeplacementMax + " Cases\n";
             infos += "Arme : " + personnage.Arme.Nom + " | " + personnage.Arme.NbPointsDegat + " Degats";
             
@@ -259,12 +260,26 @@ namespace MarioNRabbit.Views
 
         private void EvaluerSantePersonnages()
         {
-            // TODO Évaluation de la santé des personnages
+            // Évaluation de la santé des personnages
             //
             // Cette méthode doit procéder à l'évaluation de la santé des personnages et si nécessaire, passer à la fenêtre Fin lorsque la partie est terminée.
             // La partie est terminée lorsque soit le héros gagne (tous les ennemis sont morts) ou que l'ennemi gagne (tous les héros sont morts).
             // Un personnage est mort lorsqu'il n'a plus de point de vie.
             // La fenêtre Fin doit être appelées avec deux paramètres, soient un booléen qui indique si le héros gagne et l'autre, les initiales du joueurs.
+
+            // Vérification si le héros a gagné
+            if (_moteurJeu.ListePersonnages.FindAll(p => p is Ennemi && p.NbPointsVie > 0).Count == 0)
+            {
+                Fin fin = new Fin(true, _initialesJoueur);
+                fin.ShowDialog();
+                this.Close();
+            }
+            else if (_moteurJeu.ListePersonnages.FindAll(p => p is Heros && p.NbPointsVie > 0).Count == 0)
+            {
+                Fin fin = new Fin(false, _initialesJoueur);
+                fin.ShowDialog();
+                this.Close();
+            }
         }
 
         private void TourHeros()
