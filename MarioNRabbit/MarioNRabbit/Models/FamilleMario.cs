@@ -26,15 +26,9 @@ namespace MarioNRabbit.Models
         #endregion
 
         #region MÉTHODES
-        public void ActiverCompetenceSpeciale()
-        {
-            
-        }
+        public virtual void ActiverCompetenceSpeciale(){}
         
-        public void DesactiverCompetenceSpeciale()
-        {
-            
-        }
+        public virtual void DesactiverCompetenceSpeciale(){}
         #endregion
 
     }
