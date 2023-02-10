@@ -149,8 +149,8 @@ namespace MarioNRabbit.Models
             Utils.CoordonneesGrille coosHeros = new Utils.CoordonneesGrille(HerosCourant.PositionX, HerosCourant.PositionY);
             Utils.CoordonneesGrille coosEnnemi = new Utils.CoordonneesGrille(EnnemiCourant.PositionX, EnnemiCourant.PositionY);
             int distance = Utils.CalculerDistance(coosHeros, coosEnnemi);
-            
-            if (distance <= HerosCourant.NbCasesDeplacementMax)
+            Attaquant hero = HerosCourant as Attaquant;
+            if (distance <= hero.Arme.NbCasesDistanceMax)
             {
                 return true;
             }
