@@ -16,7 +16,7 @@ namespace MarioNRabbit.Views
         {
             InitializeComponent();
 
-            // TODO Initialisation du moteur de jeu
+            // Initialisation du moteur de jeu
             //
             // On doit initialiser ici la classe Moteur. Cette classe prend en paramètre la liste de noms des héros sélectionnés.
             _moteurJeu = new MoteurJeu(pNomHerosSelectionnes);

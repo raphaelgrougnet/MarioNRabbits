@@ -4,7 +4,7 @@ namespace MarioNRabbit.Models
 {
     public abstract class Personnage
     {
-        // TODO Classe Personnage
+        // Classe Personnage
         //
         // Ajouter ici tout ce qui est nécessaire à la classe Personnage.
         // Les modificateurs d'accès peuvent être modifiés.

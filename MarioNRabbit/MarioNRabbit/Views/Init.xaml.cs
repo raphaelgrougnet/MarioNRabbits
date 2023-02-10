@@ -9,7 +9,7 @@ namespace MarioNRabbit.Views
 
         public Init()
         {
-            // TODO Appel de l'initialisation du fichier de la trace
+            // Appel de l'initialisation du fichier de la trace
             //
             // Le fichier de trace doit être initialisé ici.
             Utils.InitialiserFichierTrace();
@@ -20,7 +20,7 @@ namespace MarioNRabbit.Views
 
         private void Confirmer(object pSender, RoutedEventArgs pEvent)
         {
-            // TODO Valider les initiales
+            // Valider les initiales
             //
             // Les initiales doivent se conformer à ce qui est spécifié dans les consignes.
             // En cas d'erreur, un message doit être affiché dans les contrôles txtInitiales et txtMessage de la fenêtre.

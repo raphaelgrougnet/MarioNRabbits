@@ -32,7 +32,7 @@ namespace MarioNRabbit.Models
 
             Utils.CoordonneesGrille positionPersonnage;
 
-            // TODO Instanciation des personnages
+            // Instanciation des personnages
             //
             // Vu que les héros sont choisis par le joueur (FamilleMario ou FamilleLapin) et que des ennemis doivent également être gérés, on doit procéder à une instanciation de classe dynamique.
             //
@@ -141,7 +141,7 @@ namespace MarioNRabbit.Models
 
         public bool EstAttaquePossible()
         {
-            // TODO Vérifier si une attaque est possible
+            // Vérifier si une attaque est possible
             //
             // À partir du héros courant (HerosCourant) et de l'ennemi courant (EnnemiCourant), cette méthode doit retourner:
             // - true, si l'attaque est possible
