@@ -30,7 +30,7 @@ namespace MarioNRabbit.Models
         {
             ListePersonnages = new List<Personnage>();
 
-            Utils.CoordonneesGrille positionPersonnage;
+            //Utils.CoordonneesGrille positionPersonnage;
 
             // Instanciation des personnages
             //
@@ -54,19 +54,19 @@ namespace MarioNRabbit.Models
             foreach (string nom in pNomHerosSelectionnes)
             {
                 Utils.CoordonneesGrille coos = GenererPositionHasardPersonnage(ListePersonnages, TypePersonnage.HEROS);
-                ListePersonnages.Add(Activator.CreateInstance(DefinirClasseHeros(nom),nom, coos.X, coos.Y, 5, 10, new ArmeAttaquer("Demolisseur", 3, 5)) as Personnage);
+                ListePersonnages.Add(Activator.CreateInstance(DefinirClasseHeros(nom),nom, coos.X, coos.Y, 5, 10, new ArmeAttaquer("Blaster", 3, 10)) as Personnage);
                 
 
             }
 
             Utils.CoordonneesGrille coos2 = GenererPositionHasardPersonnage(ListePersonnages, TypePersonnage.ENNEMI);
-            Ziggy ziggy = new Ziggy("Ziggy", coos2.X, coos2.Y, 5, 10, new ArmeAttaquer("Demolisseur", 3, 5));
+            Ziggy ziggy = new Ziggy("Ziggy", coos2.X, coos2.Y, 10, 10, new ArmeAttaquer("Blaster", 3, 5));
             ListePersonnages.Add(ziggy);
             coos2 = GenererPositionHasardPersonnage(ListePersonnages, TypePersonnage.ENNEMI);
-            Smasher smasher = new Smasher("Smasher", coos2.X, coos2.Y, 5, 10, new ArmeAttaquer("Demolisseur", 3, 5));
+            Smasher smasher = new Smasher("Smasher", coos2.X, coos2.Y, 10, 10, new ArmeAttaquer("Bworb", 3, 5));
             ListePersonnages.Add(smasher);
             coos2 = GenererPositionHasardPersonnage(ListePersonnages, TypePersonnage.ENNEMI);
-            Kong kong = new Kong("Kong", coos2.X, coos2.Y, 5, 10, new ArmeAttaquer("Demolisseur", 3, 5));
+            Kong kong = new Kong("Kong", coos2.X, coos2.Y, 10, 10, new ArmeAttaquer("Bwananerang", 3, 5));
             ListePersonnages.Add(kong);
 
             
@@ -152,6 +152,7 @@ namespace MarioNRabbit.Models
             Attaquant hero = HerosCourant as Attaquant;
             if (distance <= hero.Arme.NbCasesDistanceMax)
             {
+                hero.Attaquer(EnnemiCourant, HerosCourant);
                 return true;
             }
             return false;
@@ -173,6 +174,7 @@ namespace MarioNRabbit.Models
 
             if (distance <= HerosCourant.NbCasesDeplacementMax)
             {
+                HerosCourant.SeDeplacer(pPositionX, pPositionY);
                 return true;
             }
             return false;
@@ -186,7 +188,14 @@ namespace MarioNRabbit.Models
             // - true, si une compétence spéciale peut être activée
             // - false, si une compétence spéciale ne peut pas être activée
 
-            return true;
+            if (HerosCourant is FamilleMario)
+            {
+                FamilleMario hero = HerosCourant as FamilleMario;
+                hero.ActiverCompetenceSpeciale();
+                return true;
+            }
+            return false;
+            throw new NotImplementedException();
         }
 
         public void ActionCompletee()
