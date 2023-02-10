@@ -1,6 +1,7 @@
 ﻿using MarioNRabbit.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -148,11 +149,15 @@ namespace MarioNRabbit.Views
             // Toutes les informations pertinentes au personnage doivent être affichées, comme son nom, son déplacement, les informations sur ses armes.
             string infos = "";
             Attaquant personnage = (Attaquant)_moteurJeu.ListePersonnages[pIndexPersonnage];
-            infos += personnage.Nom + "\n";
-            infos += "Points de vie : " + personnage.NbPointsVie + "\n";
-            infos += "Déplacement : " + personnage.NbCasesDeplacementMax + " Cases\n";
-            infos += "Arme : " + personnage.Arme.Nom + " | " + personnage.Arme.NbPointsDegat + " Degats";
+            infos += personnage.Nom + "\n\n";
+            infos += "Déplacement : " + personnage.NbCasesDeplacementMax +"\n";
+            infos += "Points de vie restant : " + personnage.NbPointsVie + "\n\n";
             
+            infos += "Arme : " + personnage.Arme.Nom + "\n";
+            infos += "Dégat d'arme : " + personnage.Arme.NbPointsDegat + "\n";
+            infos += "Portée d'arme : " + personnage.Arme.NbCasesDistanceMax + "\n";
+
+
             return infos;
         }
 
@@ -160,7 +165,7 @@ namespace MarioNRabbit.Views
         {
             _moteurJeu.HerosCourant = _moteurJeu.ListePersonnages[int.Parse((pSender as Image).Uid)];
             _moteurJeu.ActionCourante = (MoteurJeu.TypeAction)Enum.Parse(typeof(MoteurJeu.TypeAction), (pSender as Image).Name.Substring((pSender as Image).Name.IndexOf("x") + 1));
-
+            Utils.Tracer($"{_initialesJoueur} sélectionne l'action {_moteurJeu.ActionCourante} du héros {_moteurJeu.HerosCourant.Nom}", txtTrace);
             if (_moteurJeu.ActionCourante == MoteurJeu.TypeAction.COMPETENCE && _moteurJeu.EstCompetencePossible())
                 ActionCompletee();
         }
@@ -179,11 +184,16 @@ namespace MarioNRabbit.Views
             int positionY = int.Parse((pSender as Button).GetValue(Grid.RowProperty).ToString());
 
             if (_moteurJeu.ActionCourante == MoteurJeu.TypeAction.DEPLACEMENT && _moteurJeu.EstDeplacementPossible(positionX, positionY))
+            {
                 ActionCompletee();
+                
+            }
+                
         }
 
         private void DemarrerJeu()
         {
+            Utils.Tracer("Démarrage du jeu\n", txtTrace);
             TourHeros();
         }
 
@@ -289,6 +299,8 @@ namespace MarioNRabbit.Views
             _moteurJeu.HerosCourant = null;
             _moteurJeu.EnnemiCourant = null;
             _moteurJeu.ActionCourante = MoteurJeu.TypeAction.AUCUNE;
+
+            Utils.Tracer($"***** C'est au tour du héros {_initialesJoueur} *****", txtTrace);
         }
 
         private void ReactiverControlesHeros()
@@ -316,7 +328,7 @@ namespace MarioNRabbit.Views
 
         private void PasserTourHeros(object pSender, RoutedEventArgs pEvent)
         {
-            txtTrace.Text += "\n";
+            txtTrace.Text += $"Le héro {_initialesJoueur} passe son tour\n";
 
             ReactiverControlesHeros();
             TourEnnemi();
@@ -329,7 +341,7 @@ namespace MarioNRabbit.Views
             _moteurJeu.HerosCourant = null;
             _moteurJeu.EnnemiCourant = null;
             _moteurJeu.ActionCourante = MoteurJeu.TypeAction.AUCUNE;
-
+            Utils.Tracer($"***** C'est au tour des ennemies *****", txtTrace);
             foreach (Personnage ennemi in _moteurJeu.ListePersonnages.FindAll(p => p is Ennemi && p.NbPointsVie > 0))
             {
                 Personnage herosPlusProche = _moteurJeu.TrouverHerosPlusProche(ennemi);
