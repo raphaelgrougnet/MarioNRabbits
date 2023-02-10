@@ -123,7 +123,7 @@ namespace MarioNRabbit.Models
 
         private bool EstCollisionDetectee(List<Personnage> pListePersonnages, Utils.CoordonneesGrille pCoordonnees)
         {
-            // TODO Détecter une collision entre personnages
+            // Détecter une collision entre personnages
             //
             // Cette méthode doit retourner:
             // - true, si la coordonnée reçue en paramètre est en collision avec la position d'un personnage
@@ -146,19 +146,36 @@ namespace MarioNRabbit.Models
             // À partir du héros courant (HerosCourant) et de l'ennemi courant (EnnemiCourant), cette méthode doit retourner:
             // - true, si l'attaque est possible
             // - false, si l'attaque est impossible
-
-            return true;
+            Utils.CoordonneesGrille coosHeros = new Utils.CoordonneesGrille(HerosCourant.PositionX, HerosCourant.PositionY);
+            Utils.CoordonneesGrille coosEnnemi = new Utils.CoordonneesGrille(EnnemiCourant.PositionX, EnnemiCourant.PositionY);
+            int distance = Utils.CalculerDistance(coosHeros, coosEnnemi);
+            
+            if (distance <= HerosCourant.NbCasesDeplacementMax)
+            {
+                return true;
+            }
+            return false;
+            
+            
         }
 
         public bool EstDeplacementPossible(int pPositionX, int pPositionY)
         {
-            // TODO Vérifier si un déplacement est possible
+            // Vérifier si un déplacement est possible
             //
             // Pour le héros courant (HerosCourant) et à partir des positions passées en paramètres, cette méthode doit retourner:
             // - true, si le déplacement est possible
             // - false, si le déplacement est impossible
+            
+            Utils.CoordonneesGrille coosHeros = new Utils.CoordonneesGrille(HerosCourant.PositionX, HerosCourant.PositionY);
+            Utils.CoordonneesGrille coosAtteindre = new Utils.CoordonneesGrille(pPositionX, pPositionY);
+            int distance = Utils.CalculerDistance(coosHeros, coosAtteindre);
 
-            return true;
+            if (distance <= HerosCourant.NbCasesDeplacementMax)
+            {
+                return true;
+            }
+            return false;
         }
 
         public bool EstCompetencePossible()
