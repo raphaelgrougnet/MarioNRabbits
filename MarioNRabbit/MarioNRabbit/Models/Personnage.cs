@@ -78,7 +78,9 @@ namespace MarioNRabbit.Models
         #region MÉTHODES
         public void SeDeplacer(int pPositionX, int pPositionY)
         {
-            throw new NotImplementedException();
+            PositionX = pPositionX;
+            PositionY = pPositionY;
+
         }
         #endregion
 
