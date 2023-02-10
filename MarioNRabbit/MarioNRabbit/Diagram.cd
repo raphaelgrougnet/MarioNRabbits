@@ -21,13 +21,6 @@
       <FileName>Models\Attaquant.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MarioNRabbit.Models.CompetenceSpeciale" Collapsed="true">
-    <Position X="0.5" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\CompetenceSpeciale.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="MarioNRabbit.Models.Ennemi" Collapsed="true">
     <Position X="3.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
@@ -58,13 +51,6 @@
   </Class>
   <Class Name="MarioNRabbit.Models.Personnage" Collapsed="true">
     <Position X="5.5" Y="0.5" Width="1.5" />
-    <NestedTypes>
-      <Enum Name="MarioNRabbit.Models.Personnage.TypePersonnage" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>Models\Personnage.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Enum>
-    </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAAAEgCIAAAAAABCAAgAAAAAMAAAAAAAA=</HashCode>
       <FileName>Models\Personnage.cs</FileName>
@@ -87,28 +73,28 @@
   <Class Name="MarioNRabbit.Models.Luigi" Collapsed="true">
     <Position X="8.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAAAAAAACAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Luigi.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MarioNRabbit.Models.Mario" Collapsed="true">
     <Position X="6.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAAAAAAACAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Mario.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MarioNRabbit.Models.Peach" Collapsed="true">
     <Position X="8.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAAAAAAACAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Peach.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MarioNRabbit.Models.Yoshi" Collapsed="true">
     <Position X="6.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAAAAAAACAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Yoshi.cs</FileName>
     </TypeIdentifier>
   </Class>
