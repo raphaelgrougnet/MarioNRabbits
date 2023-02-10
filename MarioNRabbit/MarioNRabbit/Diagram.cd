@@ -58,6 +58,13 @@
   </Class>
   <Class Name="MarioNRabbit.Models.Personnage" Collapsed="true">
     <Position X="5.5" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="MarioNRabbit.Models.Personnage.TypePersonnage" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Models\Personnage.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAAAEgCIAAAAAABCAAgAAAAAMAAAAAAAA=</HashCode>
       <FileName>Models\Personnage.cs</FileName>
@@ -125,6 +132,38 @@
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Kong.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="MarioNRabbit.Views.Fin" Collapsed="true">
+    <Position X="10.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Fin.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MarioNRabbit.Views.Init" Collapsed="true">
+    <Position X="12.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Views\Init.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MarioNRabbit.Views.Jeu" Collapsed="true">
+    <Position X="12.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAIAQJCACMEQAAAAAAAAAgAAACAAAAAAAACAAQEA=</HashCode>
+      <FileName>Views\Jeu.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MarioNRabbit.SelectionHeros" Collapsed="true">
+    <Position X="10.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAJAAAAAAAAAABgAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Views\SelectionHeros.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
