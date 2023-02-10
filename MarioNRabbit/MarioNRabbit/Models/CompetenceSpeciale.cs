@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MarioNRabbit.Models
 {
-    public abstract class CompetenceSpeciale
+    public class CompetenceSpeciale
     {
         
         #region CONSTANTES
