@@ -142,11 +142,17 @@ namespace MarioNRabbit.Views
 
         private string FormattageInfoBulle(int pIndexPersonnage)
         {
-            // TODO Retourner les informations du personnage
+            // Retourner les informations du personnage
             //
             // Cette méthode doit retourner les informations courantes du personnage afin d'être affichée dans une infobulle.
-            // Toutes les informations pertinentes au personnage doivent être affichées, comme son nom, son déplacement, les informations sur ses armes.          
-            return null;
+            // Toutes les informations pertinentes au personnage doivent être affichées, comme son nom, son déplacement, les informations sur ses armes.
+            string infos = "";
+            Attaquant personnage = (Attaquant)_moteurJeu.ListePersonnages[pIndexPersonnage];
+            infos += personnage.Nom + "\n";
+            infos += "Déplacement : " + personnage.NbCasesDeplacementMax + " Cases\n";
+            infos += "Arme : " + personnage.Arme.Nom + " | " + personnage.Arme.NbPointsDegat + " Degats";
+            
+            return infos;
         }
 
         private void SelectionAction(object pSender, RoutedEventArgs pEvent)
