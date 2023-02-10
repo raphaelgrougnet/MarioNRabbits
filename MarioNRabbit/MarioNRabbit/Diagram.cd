@@ -77,34 +77,6 @@
       <FileName>Models\FamilleLapin.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MarioNRabbit.Models.LapinLuigi" Collapsed="true">
-    <Position X="10.25" Y="6.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\LapinLuigi.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MarioNRabbit.Models.LapinMario" Collapsed="true">
-    <Position X="10.25" Y="5.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\LapinMario.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MarioNRabbit.Models.LapinPeach" Collapsed="true">
-    <Position X="12" Y="5.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\LapinPeach.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MarioNRabbit.Models.LapinYoshi" Collapsed="true">
-    <Position X="12" Y="6.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\LapinYoshi.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="MarioNRabbit.Models.Luigi" Collapsed="true">
     <Position X="8.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
