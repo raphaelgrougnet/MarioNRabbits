@@ -24,7 +24,7 @@ namespace MarioNRabbit
 
             // On peut mettre cette ligne en commentaire... ;)
             //trameSonore.Play();
-            string InitialesJoueur = pInitiales;
+            _initialesJoueur = pInitiales;
 
         }
 
