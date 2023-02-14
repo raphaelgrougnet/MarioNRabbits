@@ -152,7 +152,7 @@ namespace MarioNRabbit.Models
             Attaquant hero = HerosCourant as Attaquant;
             if (distance <= hero.Arme.NbCasesDistanceMax)
             {
-                hero.Attaquer(EnnemiCourant, HerosCourant);
+                hero.Attaquer(HerosCourant, EnnemiCourant);
                 return true;
             }
             return false;

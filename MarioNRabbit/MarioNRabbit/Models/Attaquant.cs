@@ -22,10 +22,11 @@ namespace MarioNRabbit.Models
         }
         
 
-        public bool Attaquer(Personnage pPersoCible, Personnage pPersoAttaquant)
+        public bool Attaquer(Personnage pPersoAttaquant, Personnage pPersoCible)
         {
             if (pPersoAttaquant is Attaquant)
             {
+                
                 Attaquant attaquant = pPersoAttaquant as Attaquant;
                 pPersoCible.NbPointsVie -= attaquant.Arme.NbPointsDegat;
                 return true;
