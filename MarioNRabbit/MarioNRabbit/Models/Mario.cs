@@ -15,19 +15,19 @@ namespace MarioNRabbit.Models
         }
 
 
-        private bool compActivee = false;
+
         public override void ActiverCompetenceSpeciale()
         {
             Arme.NbPointsDegat += 3;
-            compActivee = true;
+            EstCompetenceUtilisee = true;
         }
 
         public override void DesactiverCompetenceSpeciale()
         {
-            if (compActivee)
+            if (EstCompetenceUtilisee)
             {
                 Arme.NbPointsDegat -= 3;
-                compActivee = false;
+                EstCompetenceUtilisee = false;
             }
             
         }

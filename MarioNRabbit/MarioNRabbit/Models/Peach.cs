@@ -12,21 +12,22 @@ namespace MarioNRabbit.Models
         {
             Arme = pArme;
         }
-
-        private bool compActivee = false;
+        
+        private int _ptVie = 0;
 
         public override void ActiverCompetenceSpeciale()
         {
-            compActivee = true;
+            EstCompetenceUtilisee = true;
+            _ptVie = NbPointsVie;
             NbPointsVie += 5;
         }
 
         public override void DesactiverCompetenceSpeciale()
         {
-            if (NbPointsVie > 5 && compActivee)
+            if (NbPointsVie > _ptVie  && EstCompetenceUtilisee)
             {
                 NbPointsVie -= 5;
-                compActivee = false;
+                EstCompetenceUtilisee = false;
             }
         }
     }

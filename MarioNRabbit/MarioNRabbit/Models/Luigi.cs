@@ -10,18 +10,19 @@ namespace MarioNRabbit.Models
     {
         public Luigi(string pNom, int pPositionX, int pPositionY, int pNbCasesDeplacementMax, int pNbPointsVie, ArmeAttaquer pArme) : base(pNom, pPositionX, pPositionY, pNbCasesDeplacementMax, pNbPointsVie, pArme) { Arme = pArme; }
 
-        private bool compActivee = false;
+
         public override void ActiverCompetenceSpeciale()
         {
             NbCasesDeplacementMax += 2;
+            EstCompetenceUtilisee = true;
         }
 
         public override void DesactiverCompetenceSpeciale()
         {
-            if (compActivee)
+            if (EstCompetenceUtilisee)
             {
                 NbCasesDeplacementMax -= 2;
-                compActivee = false;
+                EstCompetenceUtilisee = false;
             }
             
         }
