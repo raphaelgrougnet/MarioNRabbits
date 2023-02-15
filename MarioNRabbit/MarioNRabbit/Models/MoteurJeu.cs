@@ -182,7 +182,7 @@ namespace MarioNRabbit.Models
 
         public bool EstCompetencePossible()
         {
-            // TODO Vérifier si la compétence spéciale peut être activée
+            // Vérifier si la compétence spéciale peut être activée
             //
             // Pour le héros courant (HerosCourant), cette méthode doit retourner:
             // - true, si une compétence spéciale peut être activée

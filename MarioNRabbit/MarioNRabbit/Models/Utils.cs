@@ -7,8 +7,7 @@ namespace MarioNRabbit.Models
 {
     public static class Utils
     {
-        // TODO Fonctions nécessaires à la trace
-        //
+        // Fonctions nécessaires à la trace
         // On doit retrouver ici une fonction qui permet l'initialisation du fichier de la trace.
         // On doit également retrouver une fonction qui permet d'écrire la trace, dans le fichier ainsi qu'à l'écran, tel que spécifié dans les consignes.
 
