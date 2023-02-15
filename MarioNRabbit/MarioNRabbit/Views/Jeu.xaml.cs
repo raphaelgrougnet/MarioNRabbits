@@ -13,6 +13,13 @@ namespace MarioNRabbit.Views
     {
         private MoteurJeu _moteurJeu;
         private string _initialesJoueur;
+        private bool finLancee = false;
+
+        /// <summary>
+        /// Constructeur de la fenêtre Jeu
+        /// </summary>
+        /// <param name="pInitiales"></param>
+        /// <param name="pNomHerosSelectionnes"></param>
         public Jeu(string pInitiales, List<string> pNomHerosSelectionnes)
         {
             InitializeComponent();
@@ -29,6 +36,9 @@ namespace MarioNRabbit.Views
             DemarrerJeu();
         }
 
+        /// <summary>
+        /// Méthode permettant de creer le terrain
+        /// </summary>
         private void CreationGrilleTerrain()
         {
             for (int i = 0; i < MoteurJeu.LARGEUR_GRILLE; i++)
@@ -50,6 +60,9 @@ namespace MarioNRabbit.Views
             }
         }
 
+        /// <summary>
+        /// Méthode permettant de creer le panneau de selection
+        /// </summary>
         private void CreationPanneau()
         {
             for (int i = 0; i < MoteurJeu.NB_HEROS; i++)
@@ -116,6 +129,9 @@ namespace MarioNRabbit.Views
             }
         }
 
+        /// <summary>
+        /// Méthode permettant de creer les personnages
+        /// </summary>
         private void CreationPersonnages()
         {
             for (int i = 0; i < _moteurJeu.ListePersonnages.Count; i++)
@@ -141,6 +157,11 @@ namespace MarioNRabbit.Views
             }
         }
 
+        /// <summary>
+        /// Méthode permettant de formater les informations de l'infobulle
+        /// </summary>
+        /// <param name="pIndexPersonnage">Numéro du personnage</param>
+        /// <returns>Un string formaté avec toutes les informations du personnage</returns>
         private string FormattageInfoBulle(int pIndexPersonnage)
         {
             // Retourner les informations du personnage
@@ -161,6 +182,11 @@ namespace MarioNRabbit.Views
             return infos;
         }
 
+        /// <summary>
+        /// Méthode permettant de sélectionner une action
+        /// </summary>
+        /// <param name="pSender"></param>
+        /// <param name="pEvent"></param>
         private void SelectionAction(object pSender, RoutedEventArgs pEvent)
         {
             _moteurJeu.HerosCourant = _moteurJeu.ListePersonnages[int.Parse((pSender as Image).Uid)];
@@ -180,6 +206,11 @@ namespace MarioNRabbit.Views
                 
         }
 
+        /// <summary>
+        /// Méthode permettant de sélectionner un ennemi
+        /// </summary>
+        /// <param name="pSender"></param>
+        /// <param name="pEvent"></param>
         private void SelectionEnnemi(object pSender, RoutedEventArgs pEvent)
         {
             _moteurJeu.EnnemiCourant = _moteurJeu.ListePersonnages[int.Parse((pSender as Image).Uid)];
@@ -193,6 +224,11 @@ namespace MarioNRabbit.Views
                 
         }
 
+        /// <summary>
+        /// Méthode permettant de sélectionner une case
+        /// </summary>
+        /// <param name="pSender"></param>
+        /// <param name="pEvent"></param>
         private void SelectionCase(object pSender, RoutedEventArgs pEvent)
         {
             int positionX = int.Parse((pSender as Button).GetValue(Grid.ColumnProperty).ToString());
@@ -207,12 +243,18 @@ namespace MarioNRabbit.Views
                 
         }
 
+        /// <summary>
+        /// Méthode permettant de démarrer le jeu
+        /// </summary>
         private void DemarrerJeu()
         {
             Utils.Tracer("Démarrage du jeu\n", txtTrace);
             TourHeros();
         }
 
+        /// <summary>
+        /// Méthode permettant de compléter une action
+        /// </summary>
         private void ActionCompletee()
         {
             _moteurJeu.ActionCompletee();
@@ -284,6 +326,9 @@ namespace MarioNRabbit.Views
             _moteurJeu.ActionCourante = MoteurJeu.TypeAction.AUCUNE;
         }
 
+        /// <summary>
+        /// Méthode permettant d'évaluer la santé des personnages
+        /// </summary>
         private void EvaluerSantePersonnages()
         {
             // Évaluation de la santé des personnages
@@ -294,22 +339,40 @@ namespace MarioNRabbit.Views
             // La fenêtre Fin doit être appelées avec deux paramètres, soient un booléen qui indique si le héros gagne et l'autre, les initiales du joueurs.
 
             // Vérification si le héros a gagné
-            if (_moteurJeu.ListePersonnages.FindAll(p => p is Ennemi && p.NbPointsVie > 0).Count == 0)
+            if (!finLancee)
             {
-                Fin fin = new Fin(true, _initialesJoueur);
-                Close();
-                fin.Show();
-                
+                if (_moteurJeu.ListePersonnages.FindAll(p => p is Ennemi && p.NbPointsVie > 0).Count == 0)
+                {
+
+                    Fin fin = new Fin(true, _initialesJoueur);
+
+                    Close();
+
+                    fin.Show();
+                    finLancee = true;
+
+                }
+
+                else if (_moteurJeu.ListePersonnages.FindAll(p => p is Heros && p.NbPointsVie > 0).Count == 0)
+                {
+
+                    Fin fin = new Fin(false, _initialesJoueur);
+
+                    Close();
+
+                    fin.Show();
+                    finLancee = true;
+
+
+                }
             }
-            else if (_moteurJeu.ListePersonnages.FindAll(p => p is Heros && p.NbPointsVie > 0).Count == 0)
-            {
-                Fin fin = new Fin(false, _initialesJoueur);
-                Close();
-                fin.Show();
-                
-            }
+            
+
         }
 
+        /// <summary>
+        /// Méthode permettant d'activer le tour du héro
+        /// </summary>
         private void TourHeros()
         {
             _moteurJeu.NbActionRestante = 3;
@@ -322,6 +385,10 @@ namespace MarioNRabbit.Views
             
         }
 
+
+        /// <summary>
+        /// Méthode permetant de réactiver les controles du héros
+        /// </summary>
         private void ReactiverControlesHeros()
         {
 
@@ -345,6 +412,11 @@ namespace MarioNRabbit.Views
             }
         }
 
+        /// <summary>
+        /// Méthode permetant de passer le tour du héros
+        /// </summary>
+        /// <param name="pSender"></param>
+        /// <param name="pEvent"></param>
         private void PasserTourHeros(object pSender, RoutedEventArgs pEvent)
         {
             txtTrace.Text += $"Le héros {_initialesJoueur} passe son tour\n\n";
@@ -353,6 +425,9 @@ namespace MarioNRabbit.Views
             TourEnnemi();
         }
 
+        /// <summary>
+        /// Méthode permettant d'activer le tour des ennemies
+        /// </summary>
         private void TourEnnemi()
         {
             _moteurJeu.NbActionRestante = 3;

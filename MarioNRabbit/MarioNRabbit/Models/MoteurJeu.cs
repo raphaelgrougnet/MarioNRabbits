@@ -7,6 +7,9 @@ namespace MarioNRabbit.Models
 {
     public class MoteurJeu
     {
+        /// <summary>
+        /// Enumération des actions possibles
+        /// </summary>
         public enum TypeAction
         {
             AUCUNE,
@@ -15,17 +18,26 @@ namespace MarioNRabbit.Models
             COMPETENCE
         }
 
+        
         public const int NB_HEROS = 3;
+        
         public const int NB_ENNEMIS = 3;
+        
         public const int LARGEUR_GRILLE = 20;
 
+        
         public List<Personnage> ListePersonnages { get; set; }
         public Personnage HerosCourant { get; set; }
         public Personnage EnnemiCourant { get; set; }
         public TypeAction ActionCourante { get; set; }
 
+
         public int NbActionRestante { get; set; }
 
+        /// <summary>
+        /// Constructeur de MoteurJeu
+        /// </summary>
+        /// <param name="pNomHerosSelectionnes"></param>
         public MoteurJeu(List<string> pNomHerosSelectionnes)
         {
             ListePersonnages = new List<Personnage>();
@@ -76,6 +88,11 @@ namespace MarioNRabbit.Models
             NbActionRestante = 3;
         }
 
+        /// <summary>
+        /// Méthode définie la classe à utiliser pour instancier le personnage
+        /// </summary>
+        /// <param name="pHeros">Hero pour lequel il faut lui definir la classe</param>
+        /// <returns>Le type de la classe à utiliser pour instancier le personnage</returns>
         private Type DefinirClasseHeros(string pHeros)
         {
 
@@ -121,6 +138,13 @@ namespace MarioNRabbit.Models
             return coordonnees;
         }
 
+
+        /// <summary>
+        /// Méthode qui détecte une collision entre personnages
+        /// </summary>
+        /// <param name="pListePersonnages">Liste des personnages sur le terrain</param>
+        /// <param name="pCoordonnees">Coordonées du personnage a rajouter</param>
+        /// <returns>True si colision détectée, False sinon</returns>
         private bool EstCollisionDetectee(List<Personnage> pListePersonnages, Utils.CoordonneesGrille pCoordonnees)
         {
             // Détecter une collision entre personnages
@@ -139,6 +163,11 @@ namespace MarioNRabbit.Models
             return false;
         }
 
+
+        /// <summary>
+        /// Méthode qui détermine si une attaque est possible
+        /// </summary>
+        /// <returns>True si l'attaque a réussi, False sinon</returns>
         public bool EstAttaquePossible()
         {
             // Vérifier si une attaque est possible
@@ -160,6 +189,13 @@ namespace MarioNRabbit.Models
             
         }
 
+
+        /// <summary>
+        /// Méthode qui détermine si un déplacement est possible
+        /// </summary>
+        /// <param name="pPositionX">Coordonée X où déplacer le héro</param>
+        /// <param name="pPositionY">Coordonée Y où déplacer le héro</param>
+        /// <returns>True si déplacement réussi, False sinon</returns>
         public bool EstDeplacementPossible(int pPositionX, int pPositionY)
         {
             // Vérifier si un déplacement est possible
@@ -180,6 +216,10 @@ namespace MarioNRabbit.Models
             return false;
         }
 
+        /// <summary>
+        /// Méthode qui détermine si une compétence spéciale est possible
+        /// </summary>
+        /// <returns>True si activation de compétence réussi, False sinon</returns>
         public bool EstCompetencePossible()
         {
             // Vérifier si la compétence spéciale peut être activée
@@ -197,6 +237,9 @@ namespace MarioNRabbit.Models
             return false;
         }
 
+        /// <summary>
+        /// Méthode qui réduis le nombre d'action restante
+        /// </summary>
         public void ActionCompletee()
         {
             NbActionRestante--;
@@ -211,6 +254,11 @@ namespace MarioNRabbit.Models
             }
         }
 
+        /// <summary>
+        /// Méthode qui trouve le héro le plus proche de l'ennemi passé en paramètre
+        /// </summary>
+        /// <param name="pEnnemi">Ennemi</param>
+        /// <returns>Le héros le plus proche</returns>
         public Personnage TrouverHerosPlusProche(Personnage pEnnemi)
         {
             Personnage herosPlusProche = null;
@@ -230,6 +278,11 @@ namespace MarioNRabbit.Models
             return herosPlusProche;
         }
 
+        /// <summary>
+        /// Méthode qui déplace l'ennemi vers le héros le plus proche
+        /// </summary>
+        /// <param name="pEnnemi">Ennemi à déplacer</param>
+        /// <param name="pHerosPlusProche">Hero vers lequel il va se déplacer</param>
         public void DeplacerVersHerosPlusProche(Personnage pEnnemi, Personnage pHerosPlusProche)
         {
             int distance = Utils.CalculerDistance(new Utils.CoordonneesGrille(pEnnemi.PositionX, pEnnemi.PositionY), new Utils.CoordonneesGrille(pHerosPlusProche.PositionX, pHerosPlusProche.PositionY));

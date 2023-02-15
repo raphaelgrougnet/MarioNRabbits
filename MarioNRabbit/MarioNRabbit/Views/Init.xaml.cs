@@ -7,6 +7,9 @@ namespace MarioNRabbit.Views
     {
         const byte LONGUEUR_INITIALES = 2;
 
+        /// <summary>
+        /// Constructeur de la fenêtre Init
+        /// </summary>
         public Init()
         {
             // Appel de l'initialisation du fichier de la trace
@@ -18,6 +21,11 @@ namespace MarioNRabbit.Views
             InitializeComponent();
         }              
 
+        /// <summary>
+        /// Méthode permetant de valider les initiales du joueur
+        /// </summary>
+        /// <param name="pSender"></param>
+        /// <param name="pEvent"></param>
         private void Confirmer(object pSender, RoutedEventArgs pEvent)
         {
             // Valider les initiales

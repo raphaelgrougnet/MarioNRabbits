@@ -8,9 +8,41 @@ namespace MarioNRabbit.Models
 {
     public class Smasher : Ennemi
     {
+
+
+        #region CONSTANTES
+
+        #endregion
+
+        #region ATTRIBUTS
+
+        #endregion
+
+        #region PROPRIÉTÉS
+
+        #endregion
+
+        #region CONSTRUCTEURS
+        /// <summary>
+        /// Constructeur de Smasher
+        /// </summary>
+        /// <param name="pNom"></param>
+        /// <param name="pPositionX"></param>
+        /// <param name="pPositionY"></param>
+        /// <param name="pNbCasesDeplacementMax"></param>
+        /// <param name="pNbPointsVie"></param>
+        /// <param name="pArme"></param>
         public Smasher(string pNom, int pPositionX, int pPositionY, int pNbCasesDeplacementMax, int pNbPointsVie, ArmeAttaquer pArme) : base(pNom, pPositionX, pPositionY, pNbCasesDeplacementMax, pNbPointsVie, pArme)
         {
             Arme = pArme;
         }
+        #endregion
+
+        #region MÉTHODES
+
+        #endregion
+
+
+
     }
 }

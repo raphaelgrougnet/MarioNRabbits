@@ -23,17 +23,27 @@ namespace MarioNRabbit.Models
         #endregion
 
         #region PROPRIÉTÉS
+        /// <summary>
+        /// Nom de l'arme
+        /// </summary>
         public string Nom
         {
             get { return _nom; }
             set { _nom = value; }
         }
 
+        /// <summary>
+        /// Nombre de points de dégâts infligés par l'arme
+        /// </summary>
         public int NbPointsDegat
         {
             get { return _nbPointsDegat; }
             set { _nbPointsDegat = value; }
         }
+
+        /// <summary>
+        /// Nombre de cases de distance maximum pour attaquer avec l'arme
+        /// </summary>
         public int NbCasesDistanceMax
         {
             get { return _nbCasesDistanceMax; }
@@ -43,12 +53,18 @@ namespace MarioNRabbit.Models
 
         #endregion
 
+        /// <summary>
+        /// Constructeur de l'arme
+        /// </summary>
+        /// <param name="pNom">Nom de l'arme</param>
+        /// <param name="pNbPointsDegat">Nombre de points de dégâts infligés par l'arme</param>
+        /// <param name="pNbCasesDistanceMax">Nombre de cases de distance maximum pour attaquer avec l'arme</param>
         #region CONSTRUCTEURS
-        public ArmeAttaquer(string nom, int nbPointsDegat, int nbCasesDistanceMax)
+        public ArmeAttaquer(string pNom, int pNbPointsDegat, int pNbCasesDistanceMax)
         {
-            Nom = nom;
-            NbPointsDegat = nbPointsDegat;
-            NbCasesDistanceMax = nbCasesDistanceMax;
+            Nom = pNom;
+            NbPointsDegat = pNbPointsDegat;
+            NbCasesDistanceMax = pNbCasesDistanceMax;
         }
         #endregion
 
