@@ -155,7 +155,7 @@ namespace MarioNRabbit.Views
             
             infos += "Arme : " + personnage.Arme.Nom + "\n";
             infos += "Dégat d'arme : " + personnage.Arme.NbPointsDegat + "\n";
-            infos += "Portée d'arme : " + personnage.Arme.NbCasesDistanceMax + "\n";
+            infos += "Portée d'arme : " + personnage.Arme.NbCasesDistanceMax;
 
 
             return infos;
@@ -165,9 +165,19 @@ namespace MarioNRabbit.Views
         {
             _moteurJeu.HerosCourant = _moteurJeu.ListePersonnages[int.Parse((pSender as Image).Uid)];
             _moteurJeu.ActionCourante = (MoteurJeu.TypeAction)Enum.Parse(typeof(MoteurJeu.TypeAction), (pSender as Image).Name.Substring((pSender as Image).Name.IndexOf("x") + 1));
-            Utils.Tracer($"{_initialesJoueur} sélectionne l'action {_moteurJeu.ActionCourante} du héros {_moteurJeu.HerosCourant.Nom}", txtTrace);
+            if (_moteurJeu.ActionCourante != MoteurJeu.TypeAction.COMPETENCE)
+            {
+                Utils.Tracer($"{_initialesJoueur} sélectionne l'action {_moteurJeu.ActionCourante} du héros {_moteurJeu.HerosCourant.Nom}\n", txtTrace);
+
+            }
             if (_moteurJeu.ActionCourante == MoteurJeu.TypeAction.COMPETENCE && _moteurJeu.EstCompetencePossible())
+            {
+                Utils.Tracer($"{_moteurJeu.HerosCourant.Nom} a utilisé sa compétence\n", txtTrace);
                 ActionCompletee();
+                Utils.Tracer($"Tours restants pour le héros {_initialesJoueur} : {_moteurJeu.NbActionRestante}", txtTrace);
+            }
+                
+                
         }
 
         private void SelectionEnnemi(object pSender, RoutedEventArgs pEvent)
@@ -175,7 +185,12 @@ namespace MarioNRabbit.Views
             _moteurJeu.EnnemiCourant = _moteurJeu.ListePersonnages[int.Parse((pSender as Image).Uid)];
 
             if (_moteurJeu.ActionCourante == MoteurJeu.TypeAction.ATTAQUE && _moteurJeu.EstAttaquePossible())
+            {
+                Utils.Tracer($"{_moteurJeu.HerosCourant.Nom} a attaqué {_moteurJeu.EnnemiCourant.Nom}\n", txtTrace);
                 ActionCompletee();
+                Utils.Tracer($"Tours restants pour le héros {_initialesJoueur} : {_moteurJeu.NbActionRestante}", txtTrace);
+            }
+                
         }
 
         private void SelectionCase(object pSender, RoutedEventArgs pEvent)
@@ -185,8 +200,9 @@ namespace MarioNRabbit.Views
 
             if (_moteurJeu.ActionCourante == MoteurJeu.TypeAction.DEPLACEMENT && _moteurJeu.EstDeplacementPossible(positionX, positionY))
             {
+                Utils.Tracer($"{_moteurJeu.HerosCourant.Nom} s'est déplacer vers la case {positionX},{positionY}\n", txtTrace);
                 ActionCompletee();
-                
+                Utils.Tracer($"Tours restants pour le héros {_initialesJoueur} : {_moteurJeu.NbActionRestante}", txtTrace);
             }
                 
         }
@@ -301,6 +317,7 @@ namespace MarioNRabbit.Views
             _moteurJeu.ActionCourante = MoteurJeu.TypeAction.AUCUNE;
 
             Utils.Tracer($"***** C'est au tour du héros {_initialesJoueur} *****", txtTrace);
+            
         }
 
         private void ReactiverControlesHeros()
@@ -328,7 +345,7 @@ namespace MarioNRabbit.Views
 
         private void PasserTourHeros(object pSender, RoutedEventArgs pEvent)
         {
-            txtTrace.Text += $"Le héro {_initialesJoueur} passe son tour\n";
+            txtTrace.Text += $"Le héros {_initialesJoueur} passe son tour\n\n";
 
             ReactiverControlesHeros();
             TourEnnemi();
@@ -342,6 +359,7 @@ namespace MarioNRabbit.Views
             _moteurJeu.EnnemiCourant = null;
             _moteurJeu.ActionCourante = MoteurJeu.TypeAction.AUCUNE;
             Utils.Tracer($"***** C'est au tour des ennemies *****", txtTrace);
+            Utils.Tracer($"Tours restants pour l'ennemi : {_moteurJeu.NbActionRestante}", txtTrace);
             foreach (Personnage ennemi in _moteurJeu.ListePersonnages.FindAll(p => p is Ennemi && p.NbPointsVie > 0))
             {
                 Personnage herosPlusProche = _moteurJeu.TrouverHerosPlusProche(ennemi);
@@ -353,7 +371,7 @@ namespace MarioNRabbit.Views
                 else
                 {
                     _moteurJeu.DeplacerVersHerosPlusProche(ennemi, herosPlusProche);
-
+                    Utils.Tracer($"Déplacement de {ennemi.Nom} vers {herosPlusProche.Nom}\n", txtTrace);
                     ActionCompletee();
 
                     // Si le nombre d'action est à 3, c'est qu'on est rendu au Héros
@@ -362,6 +380,7 @@ namespace MarioNRabbit.Views
 
                     if ((ennemi as Attaquant).Attaquer(ennemi, herosPlusProche))
                     {
+                        Utils.Tracer($"{ennemi.Nom} à attaqué {herosPlusProche.Nom}\n", txtTrace);
                         ActionCompletee();
 
                         // Si le nombre d'action est à 3, c'est qu'on est rendu au Héros
