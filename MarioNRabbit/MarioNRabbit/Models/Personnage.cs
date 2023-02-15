@@ -2,6 +2,15 @@
 
 namespace MarioNRabbit.Models
 {
+
+    public class DonneePersonnageInvalide : Exception
+    {
+        public DonneePersonnageInvalide(string pMessage) : base(message:pMessage)
+        {
+            
+        }
+    }
+    
     public abstract class Personnage
     {
         // Classe Personnage
@@ -17,6 +26,9 @@ namespace MarioNRabbit.Models
             ENNEMI,
             ALLIE
         }
+        const int POSITION_MIN_DEPLACEMENT = 0;
+
+        const int POSITION_MAX_DEPLACEMENT = 19;
 
         #endregion
 
@@ -32,33 +44,70 @@ namespace MarioNRabbit.Models
 
         private int _nbPointsVie;
 
+        
+
         #endregion
 
         #region PROPRIÉTÉS
         public string Nom
         {
             get { return _nom; }
-            set { _nom = value; }
+            set 
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new DonneePersonnageInvalide("Le nom ne peut pas être nulle ou vide");
+                }
+                _nom = value;
+            }
         }
         public int PositionX
         {
             get { return _positionX; }
-            set { _positionX = value; }
+            set 
+            {
+                if (value <= POSITION_MIN_DEPLACEMENT || value > POSITION_MAX_DEPLACEMENT)
+                {
+                    throw new DonneePersonnageInvalide($"La position X du personnage doit être comprise en {POSITION_MIN_DEPLACEMENT} et {POSITION_MAX_DEPLACEMENT}");
+                }
+                _positionX = value; 
+            }
         }
         public int PositionY
         {
             get { return _positionY; }
-            set { _positionY = value; }
+            set 
+            {
+                if (value <= POSITION_MIN_DEPLACEMENT || value > POSITION_MAX_DEPLACEMENT)
+                {
+                    throw new DonneePersonnageInvalide($"La position Y du personnage doit être comprise en {POSITION_MIN_DEPLACEMENT} et {POSITION_MAX_DEPLACEMENT}");
+                }
+                _positionY = value;
+            }
         }
         public int NbCasesDeplacementMax
         {
             get { return _nbCasesDeplacementMax; }
-            set { _nbCasesDeplacementMax = value; }
+            set
+            {
+                if (value <= POSITION_MIN_DEPLACEMENT || value > POSITION_MAX_DEPLACEMENT)
+                {
+                    throw new DonneePersonnageInvalide($"Le nombre de cases de déplacement du personnage doit être compris en {POSITION_MIN_DEPLACEMENT} et {POSITION_MAX_DEPLACEMENT}");
+                }
+                _nbCasesDeplacementMax = value; 
+            }
         }
         public int NbPointsVie
         {
             get { return _nbPointsVie; }
-            set { _nbPointsVie = value; }
+            set 
+            {
+                if (value <= 0)
+                {
+                    throw new DonneePersonnageInvalide("La vie du personnage ne peut pas être inférieur à 0");
+                }
+                _nbPointsVie = value; 
+            }
         }
         #endregion
 
