@@ -1,12 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="MarioNRabbit.Models.Allie" Collapsed="true">
-    <Position X="4.25" Y="2" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Allie.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="MarioNRabbit.Models.ArmeAttaquer" Collapsed="true">
     <Position X="0.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
@@ -52,7 +45,7 @@
   <Class Name="MarioNRabbit.Models.Personnage" Collapsed="true">
     <Position X="5.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAAAAAAAEgCIAAAAAABCAAgAAAAAMAAAAAAAA=</HashCode>
+      <HashCode>AAAAgAAAAAIAAAEgCIAAAAAABCAAgAAAAAMAAACAAAA=</HashCode>
       <FileName>Models\Personnage.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -138,7 +131,7 @@
   <Class Name="MarioNRabbit.Views.Jeu" Collapsed="true">
     <Position X="12.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAIAQJCACMEQAAAAAAAAAgAAACAAAAAAAACAAQEA=</HashCode>
+      <HashCode>AAIAAIAQJCACMEQAAAAQAAAAgAAACAAAAAAAACAAQEA=</HashCode>
       <FileName>Views\Jeu.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -150,6 +143,13 @@
       <FileName>Views\SelectionHeros.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MarioNRabbit.Models.Allie" Collapsed="true">
+    <Position X="4.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Allie.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
