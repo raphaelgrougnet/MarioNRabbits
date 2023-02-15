@@ -198,6 +198,7 @@ namespace MarioNRabbit.Views
             }
             if (_moteurJeu.ActionCourante == MoteurJeu.TypeAction.COMPETENCE && _moteurJeu.EstCompetencePossible())
             {
+                (_moteurJeu.HerosCourant as FamilleMario).ActiverCompetenceSpeciale();
                 Utils.Tracer($"{_moteurJeu.HerosCourant.Nom} a utilisé sa compétence\n", txtTrace);
                 ActionCompletee();
                 Utils.Tracer($"Tours restants pour le héros {_initialesJoueur} : {_moteurJeu.NbActionRestante}", txtTrace);
@@ -217,6 +218,7 @@ namespace MarioNRabbit.Views
 
             if (_moteurJeu.ActionCourante == MoteurJeu.TypeAction.ATTAQUE && _moteurJeu.EstAttaquePossible())
             {
+                (_moteurJeu.HerosCourant as Attaquant).Attaquer(_moteurJeu.HerosCourant, _moteurJeu.EnnemiCourant);
                 Utils.Tracer($"{_moteurJeu.HerosCourant.Nom} a attaqué {_moteurJeu.EnnemiCourant.Nom}\n", txtTrace);
                 ActionCompletee();
                 Utils.Tracer($"Tours restants pour le héros {_initialesJoueur} : {_moteurJeu.NbActionRestante}", txtTrace);
@@ -236,6 +238,7 @@ namespace MarioNRabbit.Views
 
             if (_moteurJeu.ActionCourante == MoteurJeu.TypeAction.DEPLACEMENT && _moteurJeu.EstDeplacementPossible(positionX, positionY))
             {
+                _moteurJeu.HerosCourant.SeDeplacer(positionX, positionY);
                 Utils.Tracer($"{_moteurJeu.HerosCourant.Nom} s'est déplacer vers la case {positionX},{positionY}\n", txtTrace);
                 ActionCompletee();
                 Utils.Tracer($"Tours restants pour le héros {_initialesJoueur} : {_moteurJeu.NbActionRestante}", txtTrace);

@@ -181,7 +181,7 @@ namespace MarioNRabbit.Models
             Attaquant hero = HerosCourant as Attaquant;
             if (distance <= hero.Arme.NbCasesDistanceMax)
             {
-                hero.Attaquer(HerosCourant, EnnemiCourant);
+                
                 return true;
             }
             return false;
@@ -210,7 +210,7 @@ namespace MarioNRabbit.Models
 
             if (distance <= HerosCourant.NbCasesDeplacementMax)
             {
-                HerosCourant.SeDeplacer(pPositionX, pPositionY);
+                
                 return true;
             }
             return false;
@@ -230,8 +230,7 @@ namespace MarioNRabbit.Models
 
             if (!(HerosCourant as FamilleMario).EstCompetenceUtilisee)
             {
-                FamilleMario hero = HerosCourant as FamilleMario;
-                hero.ActiverCompetenceSpeciale();
+                
                 return true;
             }
             return false;
