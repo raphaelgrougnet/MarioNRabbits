@@ -34,30 +34,27 @@ namespace MarioNRabbit
             Control boutton = (Control)pSender;
             
             
-            int nbHeros = int.Parse(txtNbHerosSelectionne.Text.Substring(0, 1));
 
 
-            nbHeros++;
             listeBoutons.Add(boutton);
 
-            txtNbHerosSelectionne.Text = $"{nbHeros}/3";
+            txtNbHerosSelectionne.Text = $"{listeBoutons.Count}/3";
+
         }
 
         private void Retrait(object pSender, RoutedEventArgs pEvent)
         {
             // Retrait d'un héros
             Control boutton = (Control)pSender;
-            int nbHeros = int.Parse(txtNbHerosSelectionne.Text.Substring(0, 1));
 
-            nbHeros--;
             listeBoutons.Remove(boutton);
 
-            txtNbHerosSelectionne.Text = $"{nbHeros}/3";
+            txtNbHerosSelectionne.Text = $"{listeBoutons.Count}/3";
         }
 
         private void DemarrerJeu(object pSender, RoutedEventArgs pEvent)
         {
-            if (int.Parse(txtNbHerosSelectionne.Text.Substring(0, 1)) == 3)
+            if (listeBoutons.Count == 3)
             {
                 List<string> listeNoms = new List<string>();
                 foreach (Control bouton in listeBoutons)
