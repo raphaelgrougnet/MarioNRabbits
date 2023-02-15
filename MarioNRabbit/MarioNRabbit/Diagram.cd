@@ -31,7 +31,7 @@
   <Class Name="MarioNRabbit.Models.FamilleMario" Collapsed="true">
     <Position X="7.75" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAICAAAAAAAAABAAAAACAAAAAAAAAAA=</HashCode>
       <FileName>Models\FamilleMario.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -73,28 +73,28 @@
   <Class Name="MarioNRabbit.Models.Luigi" Collapsed="true">
     <Position X="8.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAACAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Luigi.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MarioNRabbit.Models.Mario" Collapsed="true">
     <Position X="6.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAACAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Mario.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MarioNRabbit.Models.Peach" Collapsed="true">
     <Position X="8.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAACAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAQAAABAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Peach.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MarioNRabbit.Models.Yoshi" Collapsed="true">
     <Position X="6.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAACAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Yoshi.cs</FileName>
     </TypeIdentifier>
   </Class>
