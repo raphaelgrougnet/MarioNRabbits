@@ -14,6 +14,13 @@ namespace MarioNRabbit.Models
         #endregion
 
         #region ATTRIBUTS
+        private bool _estCompetenceUtilisee;
+
+        public bool EstCompetenceUtilisee
+        {
+            get { return _estCompetenceUtilisee; }
+            set { _estCompetenceUtilisee = value; }
+        }
 
         #endregion
 
