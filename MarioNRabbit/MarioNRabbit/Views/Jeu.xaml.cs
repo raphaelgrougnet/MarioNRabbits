@@ -297,14 +297,16 @@ namespace MarioNRabbit.Views
             if (_moteurJeu.ListePersonnages.FindAll(p => p is Ennemi && p.NbPointsVie > 0).Count == 0)
             {
                 Fin fin = new Fin(true, _initialesJoueur);
-                fin.ShowDialog();
-                this.Close();
+                Close();
+                fin.Show();
+                
             }
             else if (_moteurJeu.ListePersonnages.FindAll(p => p is Heros && p.NbPointsVie > 0).Count == 0)
             {
                 Fin fin = new Fin(false, _initialesJoueur);
-                fin.ShowDialog();
-                this.Close();
+                Close();
+                fin.Show();
+                
             }
         }
 
