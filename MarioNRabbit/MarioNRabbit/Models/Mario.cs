@@ -28,7 +28,7 @@ namespace MarioNRabbit.Models
         /// </summary>
         public override void ActiverCompetenceSpeciale()
         {
-            Arme.NbPointsDegat += 3;
+            Arme.NbPointsDegat = (int) Math.Round(Arme.NbPointsDegat *  1.3);
             EstCompetenceUtilisee = true;
         }
 
@@ -39,7 +39,7 @@ namespace MarioNRabbit.Models
         {
             if (EstCompetenceUtilisee)
             {
-                Arme.NbPointsDegat -= 3;
+                Arme.NbPointsDegat = (int)Math.Round(Arme.NbPointsDegat / 1.3);
                 EstCompetenceUtilisee = false;
             }
             

@@ -43,7 +43,7 @@ namespace MarioNRabbit.Models
         /// </summary>
         public override void ActiverCompetenceSpeciale()
         {
-            NbCasesDeplacementMax += 2;
+            NbCasesDeplacementMax = (int)Math.Round(NbCasesDeplacementMax * 1.2);
             EstCompetenceUtilisee = true;
         }
 
@@ -54,7 +54,7 @@ namespace MarioNRabbit.Models
         {
             if (EstCompetenceUtilisee)
             {
-                NbCasesDeplacementMax -= 2;
+                NbCasesDeplacementMax = (int) Math.Round(NbCasesDeplacementMax / 1.2);
                 EstCompetenceUtilisee = false;
             }
 

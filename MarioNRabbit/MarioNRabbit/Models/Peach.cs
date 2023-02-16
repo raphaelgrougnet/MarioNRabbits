@@ -49,7 +49,7 @@ namespace MarioNRabbit.Models
         {
             EstCompetenceUtilisee = true;
             _ptVie = NbPointsVie;
-            NbPointsVie += 5;
+            NbPointsVie = (int)Math.Round(NbPointsVie * 1.4);
         }
 
         /// <summary>
@@ -57,9 +57,9 @@ namespace MarioNRabbit.Models
         /// </summary>
         public override void DesactiverCompetenceSpeciale()
         {
-            if (NbPointsVie > _ptVie && EstCompetenceUtilisee)
+            if (EstCompetenceUtilisee)
             {
-                NbPointsVie -= 5;
+                NbPointsVie = (int)Math.Round(NbPointsVie / 1.4);
                 EstCompetenceUtilisee = false;
             }
         }
