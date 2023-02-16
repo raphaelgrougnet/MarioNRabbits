@@ -315,6 +315,7 @@ namespace MarioNRabbit.Views
                 if (_moteurJeu.NbActionRestante == 0)
                 {
                     ReactiverControlesHeros();
+                    
                     TourEnnemi();
                 }
             }

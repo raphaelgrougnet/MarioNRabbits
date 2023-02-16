@@ -72,13 +72,13 @@ namespace MarioNRabbit.Models
             }
 
             positionPersonnage = GenererPositionHasardPersonnage(ListePersonnages, TypePersonnage.ENNEMI);
-            Ziggy ziggy = new Ziggy("Ziggy", positionPersonnage.X, positionPersonnage.Y, 10, 10, new ArmeAttaquer("Blaster", 5, 5));
+            Ennemi ziggy = new Ennemi("Ziggy", positionPersonnage.X, positionPersonnage.Y, 10, 10, new ArmeAttaquer("Blaster", 5, 5));
             ListePersonnages.Add(ziggy);
             positionPersonnage = GenererPositionHasardPersonnage(ListePersonnages, TypePersonnage.ENNEMI);
-            Smasher smasher = new Smasher("Smasher", positionPersonnage.X, positionPersonnage.Y, 10, 10, new ArmeAttaquer("GROBOUDBOI", 7, 1));
+            Ennemi smasher = new Ennemi("Smasher", positionPersonnage.X, positionPersonnage.Y, 10, 10, new ArmeAttaquer("GROBOUDBOI", 7, 1));
             ListePersonnages.Add(smasher);
             positionPersonnage = GenererPositionHasardPersonnage(ListePersonnages, TypePersonnage.ENNEMI);
-            Kong kong = new Kong("Kong", positionPersonnage.X, positionPersonnage.Y, 10, 10, new ArmeAttaquer("COU2POIN", 7, 1));
+            Ennemi kong = new Ennemi("Kong", positionPersonnage.X, positionPersonnage.Y, 10, 10, new ArmeAttaquer("COU2POIN", 7, 1));
             ListePersonnages.Add(kong);
 
             
@@ -228,12 +228,7 @@ namespace MarioNRabbit.Models
             // - true, si une compétence spéciale peut être activée
             // - false, si une compétence spéciale ne peut pas être activée
 
-            if (!(HerosCourant as FamilleMario).EstCompetenceUtilisee)
-            {
-                
-                return true;
-            }
-            return false;
+            return !(HerosCourant as FamilleMario).EstCompetenceUtilisee;
         }
 
         /// <summary>

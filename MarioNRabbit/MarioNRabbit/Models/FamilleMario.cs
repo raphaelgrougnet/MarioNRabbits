@@ -19,6 +19,11 @@ namespace MarioNRabbit.Models
         /// </summary>
         private bool _estCompetenceUtilisee;
 
+
+
+        #endregion
+
+        #region PROPRIÉTÉS
         /// <summary>
         /// Attribut qui permet de savoir si la compétence spéciale de la famille Mario est utilisée ou non
         /// </summary>
@@ -27,11 +32,6 @@ namespace MarioNRabbit.Models
             get { return _estCompetenceUtilisee; }
             set { _estCompetenceUtilisee = value; }
         }
-
-        #endregion
-
-        #region PROPRIÉTÉS
-
         #endregion
 
         #region CONSTRUCTEURS
@@ -56,7 +56,7 @@ namespace MarioNRabbit.Models
         /// <summary>
         /// Méthode qui permet de désactiver la compétence spéciale de la famille Mario
         /// </summary>
-        public virtual void DesactiverCompetenceSpeciale(){}
+        public virtual void DesactiverCompetenceSpeciale() {}
         #endregion
 
     }

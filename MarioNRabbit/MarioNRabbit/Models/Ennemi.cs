@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MarioNRabbit.Models
 {
-    public abstract class Ennemi : Attaquant
+    public class Ennemi : Attaquant
     {
 
         #region CONSTANTES

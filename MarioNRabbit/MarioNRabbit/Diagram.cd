@@ -91,27 +91,6 @@
       <FileName>Models\Yoshi.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MarioNRabbit.Models.Ziggy" Collapsed="true">
-    <Position X="2.5" Y="4.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Ziggy.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MarioNRabbit.Models.Smasher" Collapsed="true">
-    <Position X="4.5" Y="4.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Smasher.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MarioNRabbit.Models.Kong" Collapsed="true">
-    <Position X="3.5" Y="5.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Kong.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="MarioNRabbit.Views.Fin" Collapsed="true">
     <Position X="10.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
